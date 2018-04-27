@@ -20,7 +20,9 @@ class KnownServicesViewController: UITableViewController, HMHomeManagerDelegate 
     }
     
     let knownServiceTypes = [
-        HMServiceTypeLightbulb
+        HMServiceTypeLightbulb,
+        HMServiceTypeFan,
+        HMServiceTypeOutlet
     ]
     
     var knownServices = [HMService]()
