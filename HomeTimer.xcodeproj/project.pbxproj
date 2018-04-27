@@ -1,0 +1,372 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4900FEB520918C04006EF625 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900FEB420918C04006EF625 /* AppDelegate.swift */; };
+		4900FEB720918C04006EF625 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900FEB620918C04006EF625 /* ViewController.swift */; };
+		4900FEBA20918C04006EF625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4900FEB820918C04006EF625 /* Main.storyboard */; };
+		4900FEBC20918C04006EF625 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4900FEBB20918C04006EF625 /* Assets.xcassets */; };
+		4900FEBF20918C04006EF625 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4900FEBD20918C04006EF625 /* LaunchScreen.storyboard */; };
+		494175B5209332DC002468BE /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494175B4209332DC002468BE /* HomeKit.framework */; };
+		494175B7209339CA002468BE /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494175B6209339CA002468BE /* ServicesViewController.swift */; };
+		494175B9209343BB002468BE /* KnownServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494175B8209343BB002468BE /* KnownServicesViewController.swift */; };
+		494175BB20934976002468BE /* LightTimerSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494175BA20934976002468BE /* LightTimerSetupViewController.swift */; };
+		494175BD20934AEA002468BE /* TimerSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494175BC20934AEA002468BE /* TimerSetup.storyboard */; };
+		494175BF209352D7002468BE /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494175BE209352D7002468BE /* Timer.storyboard */; };
+		494175C120935333002468BE /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494175C020935333002468BE /* TimerViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4900FEB120918C04006EF625 /* HomeTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4900FEB420918C04006EF625 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4900FEB620918C04006EF625 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4900FEB920918C04006EF625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4900FEBB20918C04006EF625 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4900FEBE20918C04006EF625 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4900FEC020918C04006EF625 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		494175B2209332DC002468BE /* HomeTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HomeTimer.entitlements; sourceTree = "<group>"; };
+		494175B4209332DC002468BE /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		494175B6209339CA002468BE /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
+		494175B8209343BB002468BE /* KnownServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownServicesViewController.swift; sourceTree = "<group>"; };
+		494175BA20934976002468BE /* LightTimerSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTimerSetupViewController.swift; sourceTree = "<group>"; };
+		494175BC20934AEA002468BE /* TimerSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerSetup.storyboard; sourceTree = "<group>"; };
+		494175BE209352D7002468BE /* Timer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
+		494175C020935333002468BE /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4900FEAE20918C04006EF625 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				494175B5209332DC002468BE /* HomeKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4900FEA820918C04006EF625 = {
+			isa = PBXGroup;
+			children = (
+				4900FEB320918C04006EF625 /* HomeTimer */,
+				4900FEB220918C04006EF625 /* Products */,
+				494175B3209332DC002468BE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4900FEB220918C04006EF625 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4900FEB120918C04006EF625 /* HomeTimer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4900FEB320918C04006EF625 /* HomeTimer */ = {
+			isa = PBXGroup;
+			children = (
+				494175B2209332DC002468BE /* HomeTimer.entitlements */,
+				4900FEB420918C04006EF625 /* AppDelegate.swift */,
+				4900FEB620918C04006EF625 /* ViewController.swift */,
+				494175B6209339CA002468BE /* ServicesViewController.swift */,
+				494175B8209343BB002468BE /* KnownServicesViewController.swift */,
+				494175BA20934976002468BE /* LightTimerSetupViewController.swift */,
+				494175C020935333002468BE /* TimerViewController.swift */,
+				4900FEB820918C04006EF625 /* Main.storyboard */,
+				494175BC20934AEA002468BE /* TimerSetup.storyboard */,
+				494175BE209352D7002468BE /* Timer.storyboard */,
+				4900FEBB20918C04006EF625 /* Assets.xcassets */,
+				4900FEBD20918C04006EF625 /* LaunchScreen.storyboard */,
+				4900FEC020918C04006EF625 /* Info.plist */,
+			);
+			path = HomeTimer;
+			sourceTree = "<group>";
+		};
+		494175B3209332DC002468BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				494175B4209332DC002468BE /* HomeKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4900FEB020918C04006EF625 /* HomeTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4900FEC320918C04006EF625 /* Build configuration list for PBXNativeTarget "HomeTimer" */;
+			buildPhases = (
+				4900FEAD20918C04006EF625 /* Sources */,
+				4900FEAE20918C04006EF625 /* Frameworks */,
+				4900FEAF20918C04006EF625 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HomeTimer;
+			productName = HomeTimer;
+			productReference = 4900FEB120918C04006EF625 /* HomeTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4900FEA920918C04006EF625 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Dylan Elliott";
+				TargetAttributes = {
+					4900FEB020918C04006EF625 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 4900FEAC20918C04006EF625 /* Build configuration list for PBXProject "HomeTimer" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4900FEA820918C04006EF625;
+			productRefGroup = 4900FEB220918C04006EF625 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4900FEB020918C04006EF625 /* HomeTimer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4900FEAF20918C04006EF625 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				494175BF209352D7002468BE /* Timer.storyboard in Resources */,
+				494175BD20934AEA002468BE /* TimerSetup.storyboard in Resources */,
+				4900FEBF20918C04006EF625 /* LaunchScreen.storyboard in Resources */,
+				4900FEBC20918C04006EF625 /* Assets.xcassets in Resources */,
+				4900FEBA20918C04006EF625 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4900FEAD20918C04006EF625 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				494175B9209343BB002468BE /* KnownServicesViewController.swift in Sources */,
+				494175B7209339CA002468BE /* ServicesViewController.swift in Sources */,
+				4900FEB720918C04006EF625 /* ViewController.swift in Sources */,
+				4900FEB520918C04006EF625 /* AppDelegate.swift in Sources */,
+				494175C120935333002468BE /* TimerViewController.swift in Sources */,
+				494175BB20934976002468BE /* LightTimerSetupViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4900FEB820918C04006EF625 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4900FEB920918C04006EF625 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4900FEBD20918C04006EF625 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4900FEBE20918C04006EF625 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4900FEC120918C04006EF625 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4900FEC220918C04006EF625 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4900FEC420918C04006EF625 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HomeTimer/HomeTimer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P5B99RCV62;
+				INFOPLIST_FILE = HomeTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylanelliott.HomeTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4900FEC520918C04006EF625 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HomeTimer/HomeTimer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P5B99RCV62;
+				INFOPLIST_FILE = HomeTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylanelliott.HomeTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4900FEAC20918C04006EF625 /* Build configuration list for PBXProject "HomeTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4900FEC120918C04006EF625 /* Debug */,
+				4900FEC220918C04006EF625 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4900FEC320918C04006EF625 /* Build configuration list for PBXNativeTarget "HomeTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4900FEC420918C04006EF625 /* Debug */,
+				4900FEC520918C04006EF625 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4900FEA920918C04006EF625 /* Project object */;
+}
