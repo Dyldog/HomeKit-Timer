@@ -11,7 +11,6 @@
 		49B184AC20947B0600BCA8AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B184AB20947B0600BCA8AF /* Assets.xcassets */; };
 		49B184AF20947B0600BCA8AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B184AD20947B0600BCA8AF /* LaunchScreen.storyboard */; };
 		49B184CB20947B9800BCA8AF /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B184CA20947B9800BCA8AF /* HomeKit.framework */; };
-		49B184CC20947BD900BCA8AF /* HomeTimer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B184BB20947B6C00BCA8AF /* HomeTimer.storyboard */; };
 		49B184CD20947BDF00BCA8AF /* HomeServiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B184BC20947B6C00BCA8AF /* HomeServiceCollectionViewCell.swift */; };
 		49B184CE20947BDF00BCA8AF /* HomeServiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B184BD20947B6C00BCA8AF /* HomeServiceCollectionViewCell.xib */; };
 		49B184CF20947BDF00BCA8AF /* HomeServiceSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B184BE20947B6C00BCA8AF /* HomeServiceSelectorView.swift */; };
@@ -20,6 +19,9 @@
 		49B184D220947BE200BCA8AF /* EggTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B184C220947B6C00BCA8AF /* EggTimeView.xib */; };
 		49B184D320947BE700BCA8AF /* TimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B184C420947B6C00BCA8AF /* TimerButtonView.swift */; };
 		49B184D420947BE700BCA8AF /* TimerButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B184C520947B6C00BCA8AF /* TimerButtonView.xib */; };
+		49B184D820947FC200BCA8AF /* HomeKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B184D720947FC200BCA8AF /* HomeKit+Extensions.swift */; };
+		49B48B7D20948145009B5228 /* HomeTimer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B184BB20947B6C00BCA8AF /* HomeTimer.storyboard */; };
+		49B48B7E20948148009B5228 /* HomeTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B184D520947EDD00BCA8AF /* HomeTimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		49B184C520947B6C00BCA8AF /* TimerButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerButtonView.xib; sourceTree = "<group>"; };
 		49B184C820947B9800BCA8AF /* HomeTimer v2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HomeTimer v2.entitlements"; sourceTree = "<group>"; };
 		49B184CA20947B9800BCA8AF /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		49B184D520947EDD00BCA8AF /* HomeTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimerViewController.swift; sourceTree = "<group>"; };
+		49B184D720947FC200BCA8AF /* HomeKit+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HomeKit+Extensions.swift"; path = "../../HomeTimer v1/Extensions/HomeKit+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 				49B184A420947B0600BCA8AF /* AppDelegate.swift */,
 				49B184C720947B6C00BCA8AF /* New Version */,
 				49B184AB20947B0600BCA8AF /* Assets.xcassets */,
+				49B184D720947FC200BCA8AF /* HomeKit+Extensions.swift */,
 				49B184AD20947B0600BCA8AF /* LaunchScreen.storyboard */,
 				49B184B020947B0600BCA8AF /* Info.plist */,
 			);
@@ -115,6 +120,7 @@
 		49B184C720947B6C00BCA8AF /* New Version */ = {
 			isa = PBXGroup;
 			children = (
+				49B184D520947EDD00BCA8AF /* HomeTimerViewController.swift */,
 				49B184BB20947B6C00BCA8AF /* HomeTimer.storyboard */,
 				49B184C020947B6C00BCA8AF /* Service Selection */,
 				49B184C320947B6C00BCA8AF /* Time Selection */,
@@ -196,9 +202,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B184AF20947B0600BCA8AF /* LaunchScreen.storyboard in Resources */,
+				49B48B7D20948145009B5228 /* HomeTimer.storyboard in Resources */,
 				49B184D220947BE200BCA8AF /* EggTimeView.xib in Resources */,
 				49B184CE20947BDF00BCA8AF /* HomeServiceCollectionViewCell.xib in Resources */,
-				49B184CC20947BD900BCA8AF /* HomeTimer.storyboard in Resources */,
 				49B184D020947BDF00BCA8AF /* HomeServiceSelectorView.xib in Resources */,
 				49B184D420947BE700BCA8AF /* TimerButtonView.xib in Resources */,
 				49B184AC20947B0600BCA8AF /* Assets.xcassets in Resources */,
@@ -213,9 +219,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B184A520947B0600BCA8AF /* AppDelegate.swift in Sources */,
+				49B184D820947FC200BCA8AF /* HomeKit+Extensions.swift in Sources */,
 				49B184D120947BE200BCA8AF /* EggTimeView.swift in Sources */,
 				49B184D320947BE700BCA8AF /* TimerButtonView.swift in Sources */,
 				49B184CD20947BDF00BCA8AF /* HomeServiceCollectionViewCell.swift in Sources */,
+				49B48B7E20948148009B5228 /* HomeTimerViewController.swift in Sources */,
 				49B184CF20947BDF00BCA8AF /* HomeServiceSelectorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

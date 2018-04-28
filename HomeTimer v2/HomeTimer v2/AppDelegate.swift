@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
-        self.window?.rootViewController = UIStoryboard(name: "HomeTimer", bundle: nil).instantiateInitialViewController()
+        self.window?.rootViewController = UIStoryboard(name: "HomeTimer", bundle: nil).instantiateInitialViewController() as! HomeTimerViewController
         self.window?.makeKeyAndVisible()
         
         return true

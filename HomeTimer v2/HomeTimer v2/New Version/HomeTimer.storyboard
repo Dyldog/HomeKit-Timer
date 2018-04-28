@@ -10,15 +10,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home Timer View Controller-->
         <scene sceneID="A5n-JF-hGO">
             <objects>
-                <viewController id="nJV-U1-Mut" sceneMemberID="viewController">
+                <viewController id="nJV-U1-Mut" customClass="HomeTimerViewController" customModule="HomeTimer_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e2V-bZ-ccV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BNO-9H-J4d" customClass="EggTimeView" customModule="HomeTimer" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BNO-9H-J4d" customClass="EggTimeView" customModule="HomeTimer_v2" customModuleProvider="target">
                                 <rect key="frame" x="16" y="205" width="340" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,7 +47,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gDn-AR-jGg" customClass="HomeServiceSelectorView" customModule="HomeTimer" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gDn-AR-jGg" customClass="HomeServiceSelectorView" customModule="HomeTimer_v2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="322" width="375" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,7 +55,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="HomeServiceSelectorView"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ahC-sL-VMY" customClass="TimerButtonView" customModule="HomeTimer" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ahC-sL-VMY" customClass="TimerButtonView" customModule="HomeTimer_v2" customModuleProvider="target">
                                 <rect key="frame" x="18" y="598" width="338" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,6 +67,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="E5W-3f-mmq"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonView" destination="ahC-sL-VMY" id="hS8-WZ-lkz"/>
+                        <outlet property="serviceView" destination="gDn-AR-jGg" id="mQ3-8a-3gI"/>
+                        <outlet property="timeView" destination="BNO-9H-J4d" id="nOw-t5-dgp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3P-nA-GOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

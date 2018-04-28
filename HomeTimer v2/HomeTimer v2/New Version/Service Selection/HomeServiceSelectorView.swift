@@ -28,13 +28,7 @@ struct ServiceCellItem {
 class HomeServiceSelectorView: XibView, UICollectionViewDataSource, UICollectionViewDelegate {
     var numCells = 0
     
-    let cellItems: [ServiceCellItem] = [
-        .init(title: "One", status: .unselected),
-        .init(title: "Two", status: .off),
-        .init(title: "Three", status: .on),
-        .init(title: "Four"),
-        .init(title: "Five"),
-    ]
+    var cellItems: [ServiceCellItem] = []
     
     @IBOutlet var collectionView: UICollectionView? {
         didSet {
@@ -77,5 +71,27 @@ class HomeServiceSelectorView: XibView, UICollectionViewDataSource, UICollection
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cellItem = cellItems[indexPath.row]
+        
+        let newStatus: ServiceSelection = {
+            switch cellItem.status {
+            case .unselected: return .on // TODO: Make the opposite of current value
+            case .off: return .on
+            case .on: return .off
+            }
+        }()
+        
+        cellItems[indexPath.row] = ServiceCellItem(
+            title: cellItem.title,
+            status: newStatus
+        )
+        
+        collectionView.reloadItems(at: [indexPath])
+    }
+    
+    func reloadData() {
+        collectionView?.reloadData()
+    }
     
 }

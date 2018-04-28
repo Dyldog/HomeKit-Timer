@@ -59,7 +59,7 @@ class EggTimeView: XibView, UIScrollViewDelegate {
             
             numberLabel.sizeToFit()
             numberLabel.frame.size.width = numberWidth
-            numberLabel.frame.origin.y = self.frame.height - numberLabel.frame.height
+            numberLabel.frame.origin.y = 0 // scrollView.frame.height - numberLabel.frame.height
             
             //numberLabel.backgroundColor = .blue
             
@@ -70,23 +70,22 @@ class EggTimeView: XibView, UIScrollViewDelegate {
                 numberLabel.frame.origin.x = 0
             }
             
-            
             scrollView.addSubview(numberLabel)
             
             let lineView = UIView(frame: CGRect(x: numberLabel.frame.maxX + numberSpacing / 2.0 - lineWidth / 2.0, y: 0, width: lineWidth, height: lineHeight))
             lineView.backgroundColor = lineColor
-            lineView.frame.origin.y = self.frame.height - lineView.frame.height
+            lineView.frame.origin.y = 0 // scrollView.frame.height - lineView.frame.height
             scrollView.addSubview(lineView)
             
             previousNumberLabel = numberLabel
+            
+            scrollView.contentSize.width = scrollView.subviews.map { $0.frame.maxX }.max() ?? 0
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        guard let scrollView = scrollView else { return }
-        
-        scrollView.contentSize.width = scrollView.subviews.map { $0.frame.maxX }.max() ?? 0
+        initializeScrollView()
     }
 }

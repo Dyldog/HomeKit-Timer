@@ -16,19 +16,23 @@ class HomeServiceCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        bgView.layer.borderWidth = 2
     }
     
     func setStatus(status: ServiceSelection) {
         switch status {
         case .unselected:
-            self.bgView.backgroundColor = .gray
-            self.label.textColor = .darkGray
+            bgView.backgroundColor = .gray
+            label.textColor = .darkGray
+            bgView.layer.borderColor = UIColor.clear.cgColor
         case .on:
-            self.bgView.backgroundColor = .white
-            self.label.textColor = .black
+            bgView.backgroundColor = .white
+            label.textColor = .black
+            bgView.layer.borderColor = UIColor.darkGray.cgColor
         case .off:
-            self.bgView.backgroundColor = .white
-            self.label.textColor = .gray
+            bgView.backgroundColor = .white
+            label.textColor = .gray
+            bgView.layer.borderColor = UIColor.gray.cgColor
         }
     }
 
