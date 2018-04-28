@@ -91,7 +91,7 @@
 				4900FEBD20918C04006EF625 /* LaunchScreen.storyboard */,
 				4900FEC020918C04006EF625 /* Info.plist */,
 			);
-			path = "HomeTimer v1";
+			name = "HomeTimer v1";
 			sourceTree = "<group>";
 		};
 		494175B3209332DC002468BE /* Frameworks */ = {
