@@ -135,8 +135,12 @@ class EggTimeView: XibView, UIScrollViewDelegate {
         let maxTime: TimeInterval = Double(numPages) * 30.0
         let timeRatio = duration / maxTime
         let uncorrectedScrollOffset = CGFloat(timeRatio) * scrollView!.contentSize.width
-        let correctedScrollOffset = uncorrectedScrollOffset + scrollViewXInset
+        let correctedScrollOffset = uncorrectedScrollOffset - scrollViewXInset
         scrollView?.contentOffset.x = correctedScrollOffset
+    }
+    
+    func set(interactionEnabled: Bool) {
+        self.isUserInteractionEnabled = interactionEnabled
     }
 }
 

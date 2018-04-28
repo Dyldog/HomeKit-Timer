@@ -11,11 +11,13 @@ import UIKit
 enum TimerState {
     case stopped
     case running
+    case paused
 }
 
 protocol TimerButtonViewDelegate {
     func startButtonTapped()
     func pauseButtonTapped()
+    func resumeButtonTapped()
     func resetButtonTapped()
     func stopButtonTapped()
 }
@@ -25,16 +27,27 @@ protocol TimerButtonViewDelegate {
     @IBOutlet var stoppedButtonView: UIView!
     @IBOutlet var runningButtonView: UIView!
     
+    @IBOutlet var pauseResumeButton: UIButton!
+    
     var delegate: TimerButtonViewDelegate?
     
     func set(state: TimerState) {
+        pauseResumeButton.setTitle(state == .running ? "Pause" : "Resume", for: .normal)
         stoppedButtonView.isHidden = state != .stopped
-        runningButtonView.isHidden = state != .running
+        runningButtonView.isHidden = state == .stopped
     }
+    
+    // MARK: - IBActions
     
     @IBAction func startButtonTapped() { delegate?.startButtonTapped() }
     
-    @IBAction func pauseButtonTapped() { delegate?.pauseButtonTapped() }
+    @IBAction func pauseButtonTapped() {
+        switch pauseResumeButton.title(for: .normal) ?? "" {
+        case "Pause": delegate?.pauseButtonTapped()
+        case "Resume": delegate?.resumeButtonTapped()
+        default: fatalError("Pause resume button found with invalid title")
+        }
+    }
     
     @IBAction func resetButtonTapped() { delegate?.resetButtonTapped() }
     

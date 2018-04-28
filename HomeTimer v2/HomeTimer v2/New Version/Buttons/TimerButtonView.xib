@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimerButtonView" customModule="HomeTimer_v2" customModuleProvider="target">
             <connections>
+                <outlet property="pauseResumeButton" destination="ZBd-dA-VVl" id="JPj-sz-dyS"/>
                 <outlet property="runningButtonView" destination="lmT-cO-0El" id="hSo-Vb-BbO"/>
                 <outlet property="stoppedButtonView" destination="tVD-9s-tnf" id="SgC-bk-xVs"/>
             </connections>

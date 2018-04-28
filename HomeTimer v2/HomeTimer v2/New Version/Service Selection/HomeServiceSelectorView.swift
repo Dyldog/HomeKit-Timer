@@ -105,6 +105,8 @@ class HomeServiceSelectorView: XibView, UICollectionViewDataSource, UICollection
         collectionView?.reloadItems(at: indexes.map { IndexPath(row: $0, section: 0) })
     }
     
-    
+    func set(selectionEnabled: Bool) {
+        collectionView?.allowsSelection = selectionEnabled
+    }
     
 }

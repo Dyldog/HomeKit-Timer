@@ -9,7 +9,7 @@
 import UIKit
 import HomeKit
 
-class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerButtonViewDelegate, HomeServiceSelectorViewDelegate {
+class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerButtonViewDelegate, HomeServiceSelectorViewDelegate, HomeTimerDelegate {
     
     @IBOutlet var timeView: EggTimeView!
     
@@ -25,6 +25,8 @@ class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerBut
         }
     }
     
+    var timer: HomeTimer?
+    
     var manager: HMHomeManager?
     
     let knownServiceTypes = [
@@ -35,10 +37,69 @@ class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerBut
     
     var characteristics = [HMCharacteristic]()
     
+    // MARK: - View
+    
     override func viewDidLoad() {
         manager = HMHomeManager()
         manager?.delegate = self
     }
+    
+    func set(viewState: TimerState) {
+        timeView.set(interactionEnabled: viewState == .stopped)
+        serviceView.set(selectionEnabled: viewState == .stopped)
+        buttonView.set(state: viewState)
+    }
+    
+    // MARK: - Timer
+    
+    private func startTimer() {
+        let selectedCharacteristics = zip(characteristics, serviceView.cellItems).filter { $0.1.status != .unselected }
+        
+        let characteristicSettings = selectedCharacteristics.map { (characteristic, cellItem) in
+            return (characteristic, cellItem.status.asBool!)
+        }
+        
+        timer = HomeTimer(duration: Int(timeView.selectedDuration), settings: characteristicSettings)
+        timer?.delegate = self
+        
+        set(viewState: .running)
+        
+        timer!.start()
+    }
+    
+    func pauseTimer() {
+        guard let timer = timer else { fatalError("Timer pause requested when no timer running") }
+        timer.stop()
+        
+        set(viewState: .paused)
+    }
+    
+    func resumeTimer() {
+        guard let timer = timer else { fatalError("Timer resume requested when no timer running") }
+        
+        set(viewState: .running)
+        timer.start()
+    }
+    
+    func resetTimer() {
+        guard let timer = timer else { fatalError("Timer reset requested when no timer running") }
+        
+        self.timeView.setDuration(duration: TimeInterval(timer.duration))
+        stopTimer()
+        startTimer()
+    }
+    
+    func stopTimer() {
+        guard let timer = timer else { fatalError("Timer stop requested when no timer running") }
+        
+        self.timeView.setDuration(duration: TimeInterval(timer.duration))
+        set(viewState: .stopped)
+        timer.stop()
+    }
+    
+    // MARK: - Conformance
+    
+    // MARK: HMHomeManagerDelegate
     
     func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
         let home = manager.homes[0]
@@ -58,7 +119,7 @@ class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerBut
         serviceView.reloadData()
     }
     
-    // MARK: - HomeServiceSelectorViewDelegate
+    // MARK: HomeServiceSelectorViewDelegate
     
     func homeServiceSelectorView(_ serviceSelectorView: HomeServiceSelectorView, didSelectServiceAt index: Int) {
         let cellItem = serviceSelectorView.cellItems[index]
@@ -82,41 +143,52 @@ class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerBut
         serviceSelectorView.reloadItems(at: [index])
     }
     
-    // MARK: - TimerButtonViewDelegate
+    // MARK: TimerButtonViewDelegate
     
     func startButtonTapped() {
-        // START TIMER
-        print(timeView.selectedDuration)
-        
-        let selectedCharacteristics = zip(characteristics, serviceView.cellItems).filter { $0.1.status != .unselected }
-        print(selectedCharacteristics.map { ($0.0.service?.displayTitle, $0.1.status.asBool) })
-        
-        let completionUnits = selectedCharacteristics.map { (characteristic, cellItem) in
-            return {
-                characteristic.writeValue(
-                    cellItem.status.asBool!,
-                    completionHandler: { error in /* TODO */ }
-                )
-            }
-        }
-        
-        let timerCompletion = {
-            completionUnits.forEach { $0() }
-        }
-        
+        startTimer()
     }
     
     func pauseButtonTapped() {
-        // PAUSE TIMER
+        pauseTimer()
+    }
+    
+    func resumeButtonTapped() {
+        resumeTimer()
     }
     
     func resetButtonTapped() {
-        // CONFIRMATION ALERT
-        // RESET TIMER
+        let alert = UIAlertController(title: "Reset?", message: "Are you sure you want to reset the timer?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            self.resetTimer()
+        }))
+        present(alert, animated: true, completion: nil)
     }
     
     func stopButtonTapped() {
-        // CONFIRMATION ALERT
-        // STOP TIMER
+        let alert = UIAlertController(title: "Reset?", message: "Are you sure you want to reset the timer?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            self.stopTimer()
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: HomeTimerDelegate
+    
+    func timerDidTick(_ timer: HomeTimer) {
+        timeView.setDuration(duration: TimeInterval(timer.timeRemaining))
+    }
+    
+    func timerDidComplete(_ timer: HomeTimer) {
+        timeView.setDuration(duration: TimeInterval(timer.duration))
+        set(viewState: .stopped)
+    }
+    
+    func timer(_ timer: HomeTimer, didError error: Error, whileRunningSetting: PowerCharacteristicSetting) {
+        let alert = UIAlertController(title: "Error setting value", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

@@ -22,6 +22,7 @@
 		49B184D820947FC200BCA8AF /* HomeKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B184D720947FC200BCA8AF /* HomeKit+Extensions.swift */; };
 		49B48B7D20948145009B5228 /* HomeTimer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B184BB20947B6C00BCA8AF /* HomeTimer.storyboard */; };
 		49B48B7E20948148009B5228 /* HomeTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B184D520947EDD00BCA8AF /* HomeTimerViewController.swift */; };
+		49B48B802094B333009B5228 /* HomeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B48B7F2094B333009B5228 /* HomeTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		49B184CA20947B9800BCA8AF /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		49B184D520947EDD00BCA8AF /* HomeTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimerViewController.swift; sourceTree = "<group>"; };
 		49B184D720947FC200BCA8AF /* HomeKit+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HomeKit+Extensions.swift"; path = "../../HomeTimer v1/Extensions/HomeKit+Extensions.swift"; sourceTree = "<group>"; };
+		49B48B7F2094B333009B5228 /* HomeTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				49B184C020947B6C00BCA8AF /* Service Selection */,
 				49B184C320947B6C00BCA8AF /* Time Selection */,
 				49B184C620947B6C00BCA8AF /* Buttons */,
+				49B48B7F2094B333009B5228 /* HomeTimer.swift */,
 			);
 			path = "New Version";
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				49B184D820947FC200BCA8AF /* HomeKit+Extensions.swift in Sources */,
 				49B184D120947BE200BCA8AF /* EggTimeView.swift in Sources */,
 				49B184D320947BE700BCA8AF /* TimerButtonView.swift in Sources */,
+				49B48B802094B333009B5228 /* HomeTimer.swift in Sources */,
 				49B184CD20947BDF00BCA8AF /* HomeServiceCollectionViewCell.swift in Sources */,
 				49B48B7E20948148009B5228 /* HomeTimerViewController.swift in Sources */,
 				49B184CF20947BDF00BCA8AF /* HomeServiceSelectorView.swift in Sources */,
