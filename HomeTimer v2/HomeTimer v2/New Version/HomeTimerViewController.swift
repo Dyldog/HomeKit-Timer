@@ -9,10 +9,16 @@
 import UIKit
 import HomeKit
 
-class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerButtonViewDelegate {
+class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerButtonViewDelegate, HomeServiceSelectorViewDelegate {
     
     @IBOutlet var timeView: EggTimeView!
-    @IBOutlet var serviceView: HomeServiceSelectorView!
+    
+    @IBOutlet var serviceView: HomeServiceSelectorView! {
+        didSet {
+            serviceView.delegate = self
+        }
+    }
+    
     @IBOutlet var buttonView: TimerButtonView! {
         didSet {
             buttonView.delegate = self
@@ -27,23 +33,11 @@ class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerBut
         HMServiceTypeOutlet
     ]
     
-    var services = [HMService]()
+    var characteristics = [HMCharacteristic]()
     
     override func viewDidLoad() {
         manager = HMHomeManager()
         manager?.delegate = self
-    }
-    
-    override func prepareForInterfaceBuilder() {
-        serviceView.cellItems = [
-            .init(title: "One", status: .unselected),
-            .init(title: "Two", status: .off),
-            .init(title: "Three", status: .on),
-            .init(title: "Four"),
-            .init(title: "Five"),
-        ]
-        
-        serviceView.reloadData()
     }
     
     func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
@@ -51,13 +45,41 @@ class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerBut
         
         let allServices = home.accessories.flatMap({ $0.services })
         
-        services = allServices.filter { service in knownServiceTypes.contains(service.serviceType) }
+        let knownServices = allServices.filter { service in knownServiceTypes.contains(service.serviceType) }
 
-        serviceView.cellItems = services.map { service in
-            return ServiceCellItem(title: service.displayTitle)
+        characteristics = knownServices.flatMap{ service in
+            service.characteristics.first(where: { $0.characteristicType == HMCharacteristicTypePowerState })
+        }
+        
+        serviceView.cellItems = characteristics.map { characteristic in
+            return ServiceCellItem(title: characteristic.service!.displayTitle)
         }
         
         serviceView.reloadData()
+    }
+    
+    // MARK: - HomeServiceSelectorViewDelegate
+    
+    func homeServiceSelectorView(_ serviceSelectorView: HomeServiceSelectorView, didSelectServiceAt index: Int) {
+        let cellItem = serviceSelectorView.cellItems[index]
+        let characteristic = characteristics[index]
+        guard let characteristicValue = characteristic.value as? Bool else { return }
+        
+        
+        let newStatus: ServiceSelection = {
+            switch cellItem.status {
+            case .unselected: return !characteristicValue ? .on : .off
+            case .off: return .on
+            case .on: return .off
+            }
+        }()
+        
+        serviceSelectorView.cellItems[index] = ServiceCellItem(
+            title: cellItem.title,
+            status: newStatus
+        )
+        
+        serviceSelectorView.reloadItems(at: [index])
     }
     
     // MARK: - TimerButtonViewDelegate
@@ -65,6 +87,23 @@ class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerBut
     func startButtonTapped() {
         // START TIMER
         print(timeView.selectedDuration)
+        
+        let selectedCharacteristics = zip(characteristics, serviceView.cellItems).filter { $0.1.status != .unselected }
+        print(selectedCharacteristics.map { ($0.0.service?.displayTitle, $0.1.status.asBool) })
+        
+        let completionUnits = selectedCharacteristics.map { (characteristic, cellItem) in
+            return {
+                characteristic.writeValue(
+                    cellItem.status.asBool!,
+                    completionHandler: { error in /* TODO */ }
+                )
+            }
+        }
+        
+        let timerCompletion = {
+            completionUnits.forEach { $0() }
+        }
+        
     }
     
     func pauseButtonTapped() {

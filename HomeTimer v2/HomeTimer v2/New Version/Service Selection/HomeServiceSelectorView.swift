@@ -13,6 +13,23 @@ enum ServiceSelection {
     case unselected
     case off
     case on
+    
+    var asBool: Bool? {
+        switch self {
+        case .unselected: return nil
+        case .off: return false
+        case .on: return true
+        }
+    }
+}
+
+extension Bool {
+    var asServiceState: ServiceSelection {
+        switch self {
+        case true: return .on
+        case false: return .off
+        }
+    }
 }
 
 struct ServiceCellItem {
@@ -25,8 +42,13 @@ struct ServiceCellItem {
     }
 }
 
+protocol HomeServiceSelectorViewDelegate {
+    func homeServiceSelectorView(_ serviceSelectorView: HomeServiceSelectorView, didSelectServiceAt index: Int)
+}
+
 class HomeServiceSelectorView: XibView, UICollectionViewDataSource, UICollectionViewDelegate {
-    var numCells = 0
+    
+    var delegate: HomeServiceSelectorViewDelegate?
     
     var cellItems: [ServiceCellItem] = []
     
@@ -72,29 +94,17 @@ class HomeServiceSelectorView: XibView, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        // TODO: Move this to the view controller, view should just alert
-        
-        let cellItem = cellItems[indexPath.row]
-        
-        let newStatus: ServiceSelection = {
-            switch cellItem.status {
-            case .unselected: return .on // TODO: Make the opposite of current value
-            case .off: return .on
-            case .on: return .off
-            }
-        }()
-        
-        cellItems[indexPath.row] = ServiceCellItem(
-            title: cellItem.title,
-            status: newStatus
-        )
-        
-        collectionView.reloadItems(at: [indexPath])
+        delegate?.homeServiceSelectorView(self, didSelectServiceAt: indexPath.row)
     }
     
     func reloadData() {
         collectionView?.reloadData()
     }
+    
+    func reloadItems(at indexes: [Int]) {
+        collectionView?.reloadItems(at: indexes.map { IndexPath(row: $0, section: 0) })
+    }
+    
+    
     
 }

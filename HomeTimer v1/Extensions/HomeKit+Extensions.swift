@@ -29,3 +29,9 @@ extension HMService {
         return titleComponents.joined(separator: separator)
     }
 }
+
+extension HMCharacteristic {
+    var accessory: HMAccessory? {
+        return service?.accessory
+    }
+}

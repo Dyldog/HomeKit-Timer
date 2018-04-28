@@ -130,6 +130,14 @@ class EggTimeView: XibView, UIScrollViewDelegate {
     var selectedDuration: TimeInterval {
         return Double(indexForCorrectedOffset(offset: scrollViewContentOffset)) * 30.0
     }
+    
+    func setDuration(duration: TimeInterval) {
+        let maxTime: TimeInterval = Double(numPages) * 30.0
+        let timeRatio = duration / maxTime
+        let uncorrectedScrollOffset = CGFloat(timeRatio) * scrollView!.contentSize.width
+        let correctedScrollOffset = uncorrectedScrollOffset + scrollViewXInset
+        scrollView?.contentOffset.x = correctedScrollOffset
+    }
 }
 
 extension Comparable {
