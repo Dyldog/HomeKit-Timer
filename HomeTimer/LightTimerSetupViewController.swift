@@ -64,8 +64,3 @@ class LightTimerSetupViewController: UIViewController {
         self.navigationController?.pushViewController(timerViewController, animated: true)
     }
 }
-
-struct TimerModel {
-    let duration: Int // in secondds
-    let completionHandler: () -> Void
-}

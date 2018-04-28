@@ -19,6 +19,9 @@
 		494175BD20934AEA002468BE /* TimerSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494175BC20934AEA002468BE /* TimerSetup.storyboard */; };
 		494175BF209352D7002468BE /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494175BE209352D7002468BE /* Timer.storyboard */; };
 		494175C120935333002468BE /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494175C020935333002468BE /* TimerViewController.swift */; };
+		49BA3E8820943F8300D05C93 /* KnownServicesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA3E8720943F8300D05C93 /* KnownServicesPresenter.swift */; };
+		49BA3E8A2094491D00D05C93 /* SimpleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA3E892094491D00D05C93 /* SimpleListViewController.swift */; };
+		49BA3E8D2094497600D05C93 /* HomeKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA3E8C2094497600D05C93 /* HomeKit+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		494175BC20934AEA002468BE /* TimerSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimerSetup.storyboard; sourceTree = "<group>"; };
 		494175BE209352D7002468BE /* Timer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
 		494175C020935333002468BE /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		49BA3E8720943F8300D05C93 /* KnownServicesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownServicesPresenter.swift; sourceTree = "<group>"; };
+		49BA3E892094491D00D05C93 /* SimpleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleListViewController.swift; sourceTree = "<group>"; };
+		49BA3E8C2094497600D05C93 /* HomeKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeKit+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,11 +79,12 @@
 			children = (
 				494175B2209332DC002468BE /* HomeTimer.entitlements */,
 				4900FEB420918C04006EF625 /* AppDelegate.swift */,
-				4900FEB620918C04006EF625 /* ViewController.swift */,
-				494175B6209339CA002468BE /* ServicesViewController.swift */,
-				494175B8209343BB002468BE /* KnownServicesViewController.swift */,
+				49BA3E892094491D00D05C93 /* SimpleListViewController.swift */,
+				49BA3E8620943F5F00D05C93 /* Old View Controllers */,
+				49BA3E8E2094498E00D05C93 /* Known Services */,
 				494175BA20934976002468BE /* LightTimerSetupViewController.swift */,
 				494175C020935333002468BE /* TimerViewController.swift */,
+				49BA3E8B2094495C00D05C93 /* Extensions */,
 				4900FEB820918C04006EF625 /* Main.storyboard */,
 				494175BC20934AEA002468BE /* TimerSetup.storyboard */,
 				494175BE209352D7002468BE /* Timer.storyboard */,
@@ -94,6 +101,32 @@
 				494175B4209332DC002468BE /* HomeKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49BA3E8620943F5F00D05C93 /* Old View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4900FEB620918C04006EF625 /* ViewController.swift */,
+				494175B6209339CA002468BE /* ServicesViewController.swift */,
+			);
+			path = "Old View Controllers";
+			sourceTree = "<group>";
+		};
+		49BA3E8B2094495C00D05C93 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				49BA3E8C2094497600D05C93 /* HomeKit+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		49BA3E8E2094498E00D05C93 /* Known Services */ = {
+			isa = PBXGroup;
+			children = (
+				494175B8209343BB002468BE /* KnownServicesViewController.swift */,
+				49BA3E8720943F8300D05C93 /* KnownServicesPresenter.swift */,
+			);
+			path = "Known Services";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +214,9 @@
 				4900FEB520918C04006EF625 /* AppDelegate.swift in Sources */,
 				494175C120935333002468BE /* TimerViewController.swift in Sources */,
 				494175BB20934976002468BE /* LightTimerSetupViewController.swift in Sources */,
+				49BA3E8A2094491D00D05C93 /* SimpleListViewController.swift in Sources */,
+				49BA3E8820943F8300D05C93 /* KnownServicesPresenter.swift in Sources */,
+				49BA3E8D2094497600D05C93 /* HomeKit+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

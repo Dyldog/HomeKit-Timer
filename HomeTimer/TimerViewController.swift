@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct TimerModel {
+    let duration: Int // in secondds
+    let completionHandler: () -> Void
+}
+
 class TimerViewController: UIViewController {
     
     var timerModel: TimerModel! { // Should be set before viewWillAppear
