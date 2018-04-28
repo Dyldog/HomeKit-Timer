@@ -43,14 +43,18 @@ class EggTimeView: XibView, UIScrollViewDelegate {
         }
     }
     
+    var maxValue: Int = 10
+    var numPips = 1
+    
     func initializeScrollView() {
         guard let scrollView = scrollView else { return }
         
         scrollView.subviews.forEach { $0.removeFromSuperview() }
         
         var previousNumberLabel: UILabel?
+        let xOffset = scrollView.frame.size.width / 2.0
         
-        (0...10).forEach { index in
+        (0...maxValue).forEach { index in
             let numberLabel = UILabel()
             numberLabel.text = String(index)
             numberLabel.textAlignment = .center
@@ -58,28 +62,29 @@ class EggTimeView: XibView, UIScrollViewDelegate {
             numberLabel.textColor = numberColor
             
             numberLabel.sizeToFit()
-            numberLabel.frame.size.width = numberWidth
-            numberLabel.frame.origin.y = 0 // scrollView.frame.height - numberLabel.frame.height
+            numberLabel.frame.origin.y = scrollView.frame.height - numberLabel.frame.height
             
-            //numberLabel.backgroundColor = .blue
+            // numberLabel.backgroundColor = .blue
             
             
             if let previousNumberLabel = previousNumberLabel {
-                numberLabel.frame.origin.x = previousNumberLabel.center.x + numberSpacing + numberLabel.frame.width / 2.0
+                numberLabel.center.x = previousNumberLabel.center.x + numberSpacing
             } else {
-                numberLabel.frame.origin.x = 0
+                numberLabel.center.x = 0
             }
             
             scrollView.addSubview(numberLabel)
             
-            let lineView = UIView(frame: CGRect(x: numberLabel.frame.maxX + numberSpacing / 2.0 - lineWidth / 2.0, y: 0, width: lineWidth, height: lineHeight))
+            let lineView = UIView(frame: CGRect(x: 0, y: 0, width: lineWidth, height: lineHeight))
+            lineView.center.x = numberLabel.center.x + numberSpacing / 2.0
             lineView.backgroundColor = lineColor
-            lineView.frame.origin.y = 0 // scrollView.frame.height - lineView.frame.height
+            lineView.frame.origin.y = scrollView.frame.height - lineView.frame.height
             scrollView.addSubview(lineView)
             
             previousNumberLabel = numberLabel
             
-            scrollView.contentSize.width = scrollView.subviews.map { $0.frame.maxX }.max() ?? 0
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: xOffset, bottom: 0, right: xOffset)
+            scrollView.contentSize.width = (scrollView.subviews.map { $0.center.x }.max() ?? 0)
         }
     }
     
@@ -87,5 +92,48 @@ class EggTimeView: XibView, UIScrollViewDelegate {
         super.layoutSubviews()
         
         initializeScrollView()
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        let correctedOffset = targetContentOffset.pointee.x + scrollViewXInset
+        let index = CGFloat(indexForCorrectedOffset(offset: correctedOffset))
+        targetContentOffset.pointee.x = index * scrollViewPageSize - scrollViewXInset
+    }
+    
+    func indexForCorrectedOffset(offset: CGFloat) -> Int {
+        let scrollView = self.scrollView!
+        
+        let targetX = offset
+        
+        let index = round(CGFloat(numPages) * targetX / scrollView.contentSize.width).clamp(lower: 0, upper: CGFloat(numPages))
+        
+        return Int(index)
+    }
+    
+    var scrollViewXInset: CGFloat {
+        return scrollView!.contentInset.left
+    }
+    
+    var scrollViewPageSize: CGFloat {
+        return scrollView!.contentSize.width / CGFloat(numPages)
+    }
+    
+    var numPages: Int {
+        return (1 + numPips) * (maxValue + 1) - 1
+    }
+    
+    var scrollViewContentOffset: CGFloat {
+        return scrollView!.contentOffset.x + scrollViewXInset
+    }
+    
+    var selectedDuration: TimeInterval {
+        return Double(indexForCorrectedOffset(offset: scrollViewContentOffset)) * 30.0
+    }
+}
+
+extension Comparable {
+    func clamp(lower: Self, upper: Self) -> Self {
+        return min(max(self, lower), upper)
     }
 }

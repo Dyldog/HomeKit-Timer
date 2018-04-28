@@ -64,6 +64,7 @@ class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerBut
     
     func startButtonTapped() {
         // START TIMER
+        print(timeView.selectedDuration)
     }
     
     func pauseButtonTapped() {
