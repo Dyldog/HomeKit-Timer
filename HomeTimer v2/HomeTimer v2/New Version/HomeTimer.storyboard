@@ -27,7 +27,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ahC-sL-VMY" customClass="TimerButtonView" customModule="HomeTimer_v2" customModuleProvider="target">
-                                <rect key="frame" x="18" y="598" width="338" height="49"/>
+                                <rect key="frame" x="18" y="570" width="338" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -35,16 +35,16 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BNO-9H-J4d" customClass="EggTimeView" customModule="HomeTimer_v2" customModuleProvider="target">
-                                <rect key="frame" x="18" y="207" width="340" height="57"/>
+                                <rect key="frame" x="0.0" y="207" width="375" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="EggTimeView"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberSpacing">
-                                        <real key="value" value="51"/>
+                                        <real key="value" value="72"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberFontSize">
-                                        <integer key="value" value="16"/>
+                                        <integer key="value" value="34"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                         <real key="value" value="2"/>

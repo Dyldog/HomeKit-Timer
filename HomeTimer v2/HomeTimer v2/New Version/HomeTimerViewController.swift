@@ -113,7 +113,7 @@ class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerBut
         }
         
         serviceView.cellItems = characteristics.map { characteristic in
-            return ServiceCellItem(title: characteristic.service!.displayTitle)
+            return ServiceCellItem(roomName: characteristic.accessory!.room!.name, serviceName: characteristic.service!.name)
         }
         
         serviceView.reloadData()
@@ -136,7 +136,8 @@ class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerBut
         }()
         
         serviceSelectorView.cellItems[index] = ServiceCellItem(
-            title: cellItem.title,
+            roomName: cellItem.roomName,
+            serviceName: cellItem.serviceName,
             status: newStatus
         )
         
@@ -167,7 +168,7 @@ class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerBut
     }
     
     func stopButtonTapped() {
-        let alert = UIAlertController(title: "Reset?", message: "Are you sure you want to reset the timer?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Stop?", message: "Are you sure you want to stop the timer?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
             self.stopTimer()

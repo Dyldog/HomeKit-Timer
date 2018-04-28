@@ -33,11 +33,13 @@ extension Bool {
 }
 
 struct ServiceCellItem {
-    let title: String
+    let roomName: String
+    let serviceName: String
     let status: ServiceSelection
     
-    init(title: String, status: ServiceSelection = .unselected) {
-        self.title = title
+    init(roomName: String, serviceName: String, status: ServiceSelection = .unselected) {
+        self.roomName = roomName
+        self.serviceName = serviceName
         self.status = status
     }
 }
@@ -86,7 +88,8 @@ class HomeServiceSelectorView: XibView, UICollectionViewDataSource, UICollection
         
         let cellItem = cellItems[indexPath.row]
         
-        cell.label.text = cellItem.title
+        cell.roomNameLabel.text = cellItem.roomName
+        cell.serviceNameLabel.text = cellItem.serviceName
         cell.setStatus(status: cellItem.status)
         
         

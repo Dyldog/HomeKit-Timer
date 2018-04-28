@@ -10,7 +10,8 @@ import UIKit
 
 class HomeServiceCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet var label: UILabel!
+    @IBOutlet var roomNameLabel: UILabel!
+    @IBOutlet var serviceNameLabel: UILabel!
     @IBOutlet var bgView: UIView!
     
     override func awakeFromNib() {
@@ -19,21 +20,29 @@ class HomeServiceCollectionViewCell: UICollectionViewCell {
         bgView.layer.borderWidth = 2
     }
     
+    func styleLabel(_ label: UILabel, forStatus status: ServiceSelection) {
+        switch status {
+        case .unselected: label.textColor = .darkGray
+        case .on: label.textColor = .black
+        case .off: label.textColor = .white
+        }
+    }
+    
     func setStatus(status: ServiceSelection) {
         switch status {
         case .unselected:
             bgView.backgroundColor = .gray
-            label.textColor = .darkGray
             bgView.layer.borderColor = UIColor.clear.cgColor
         case .on:
             bgView.backgroundColor = .white
-            label.textColor = .black
             bgView.layer.borderColor = UIColor.darkGray.cgColor
         case .off:
             bgView.backgroundColor = .black
-            label.textColor = .white
             bgView.layer.borderColor = UIColor.clear.cgColor
         }
+        
+        styleLabel(roomNameLabel, forStatus: status)
+        styleLabel(serviceNameLabel, forStatus: status)
     }
 
 }

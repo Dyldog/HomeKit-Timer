@@ -37,7 +37,7 @@ class EggTimeView: XibView, UIScrollViewDelegate {
         didSet { initializeScrollView() }
     }
     
-    @IBOutlet var scrollView: UIScrollView? {
+    @IBOutlet private var scrollView: UIScrollView? {
         didSet {
             initializeScrollView()
         }
@@ -46,7 +46,7 @@ class EggTimeView: XibView, UIScrollViewDelegate {
     var maxValue: Int = 10
     var numPips = 1
     
-    func initializeScrollView() {
+    private func initializeScrollView() {
         guard let scrollView = scrollView else { return }
         
         scrollView.subviews.forEach { $0.removeFromSuperview() }
@@ -101,7 +101,7 @@ class EggTimeView: XibView, UIScrollViewDelegate {
         targetContentOffset.pointee.x = index * scrollViewPageSize - scrollViewXInset
     }
     
-    func indexForCorrectedOffset(offset: CGFloat) -> Int {
+    private func indexForCorrectedOffset(offset: CGFloat) -> Int {
         let scrollView = self.scrollView!
         
         let targetX = offset
@@ -111,25 +111,28 @@ class EggTimeView: XibView, UIScrollViewDelegate {
         return Int(index)
     }
     
-    var scrollViewXInset: CGFloat {
+    private var scrollViewXInset: CGFloat {
         return scrollView!.contentInset.left
     }
     
-    var scrollViewPageSize: CGFloat {
+    private var scrollViewPageSize: CGFloat {
         return scrollView!.contentSize.width / CGFloat(numPages)
     }
     
-    var numPages: Int {
+    private var numPages: Int {
         return (1 + numPips) * (maxValue + 1) - 1
     }
     
-    var scrollViewContentOffset: CGFloat {
+    private var scrollViewContentOffset: CGFloat {
         return scrollView!.contentOffset.x + scrollViewXInset
     }
     
     var selectedDuration: TimeInterval {
         return Double(indexForCorrectedOffset(offset: scrollViewContentOffset)) * 30.0
     }
+    
+    // TODO: Rename this
+    // TODO: Make this animateable. Could even use UIDynamics to make it bounce
     
     func setDuration(duration: TimeInterval) {
         let maxTime: TimeInterval = Double(numPages) * 30.0
@@ -144,7 +147,7 @@ class EggTimeView: XibView, UIScrollViewDelegate {
     }
 }
 
-extension Comparable {
+private extension Comparable {
     func clamp(lower: Self, upper: Self) -> Self {
         return min(max(self, lower), upper)
     }
