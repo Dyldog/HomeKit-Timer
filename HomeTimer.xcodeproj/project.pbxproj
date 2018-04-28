@@ -22,6 +22,16 @@
 		49BA3E8820943F8300D05C93 /* KnownServicesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA3E8720943F8300D05C93 /* KnownServicesPresenter.swift */; };
 		49BA3E8A2094491D00D05C93 /* SimpleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA3E892094491D00D05C93 /* SimpleListViewController.swift */; };
 		49BA3E8D2094497600D05C93 /* HomeKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA3E8C2094497600D05C93 /* HomeKit+Extensions.swift */; };
+		49BA3E912094538C00D05C93 /* HomeTimer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BA3E902094538C00D05C93 /* HomeTimer.storyboard */; };
+		49BA3E93209453F900D05C93 /* EggTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49BA3E92209453F900D05C93 /* EggTimeView.xib */; };
+		49BA3E952094547600D05C93 /* EggTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA3E942094547600D05C93 /* EggTimeView.swift */; };
+		49BA3E972094550D00D05C93 /* HomeServiceSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA3E962094550D00D05C93 /* HomeServiceSelectorView.swift */; };
+		49BA3E992094553100D05C93 /* HomeServiceSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49BA3E982094553100D05C93 /* HomeServiceSelectorView.xib */; };
+		49BA3E9B209455A100D05C93 /* TimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA3E9A209455A100D05C93 /* TimerButtonView.swift */; };
+		49BA3E9D209455B400D05C93 /* TimerButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49BA3E9C209455B400D05C93 /* TimerButtonView.xib */; };
+		49BA3E9F209456C700D05C93 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA3E9E209456C700D05C93 /* UIView+Extensions.swift */; };
+		49BA3EA42094685B00D05C93 /* HomeServiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA3EA22094685A00D05C93 /* HomeServiceCollectionViewCell.swift */; };
+		49BA3EA52094685B00D05C93 /* HomeServiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49BA3EA32094685B00D05C93 /* HomeServiceCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +53,16 @@
 		49BA3E8720943F8300D05C93 /* KnownServicesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnownServicesPresenter.swift; sourceTree = "<group>"; };
 		49BA3E892094491D00D05C93 /* SimpleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleListViewController.swift; sourceTree = "<group>"; };
 		49BA3E8C2094497600D05C93 /* HomeKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeKit+Extensions.swift"; sourceTree = "<group>"; };
+		49BA3E902094538C00D05C93 /* HomeTimer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTimer.storyboard; sourceTree = "<group>"; };
+		49BA3E92209453F900D05C93 /* EggTimeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EggTimeView.xib; sourceTree = "<group>"; };
+		49BA3E942094547600D05C93 /* EggTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggTimeView.swift; sourceTree = "<group>"; };
+		49BA3E962094550D00D05C93 /* HomeServiceSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceSelectorView.swift; sourceTree = "<group>"; };
+		49BA3E982094553100D05C93 /* HomeServiceSelectorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeServiceSelectorView.xib; sourceTree = "<group>"; };
+		49BA3E9A209455A100D05C93 /* TimerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerButtonView.swift; sourceTree = "<group>"; };
+		49BA3E9C209455B400D05C93 /* TimerButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerButtonView.xib; sourceTree = "<group>"; };
+		49BA3E9E209456C700D05C93 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		49BA3EA22094685A00D05C93 /* HomeServiceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceCollectionViewCell.swift; sourceTree = "<group>"; };
+		49BA3EA32094685B00D05C93 /* HomeServiceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeServiceCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +99,9 @@
 			children = (
 				494175B2209332DC002468BE /* HomeTimer.entitlements */,
 				4900FEB420918C04006EF625 /* AppDelegate.swift */,
-				49BA3E892094491D00D05C93 /* SimpleListViewController.swift */,
-				49BA3E8620943F5F00D05C93 /* Old View Controllers */,
-				49BA3E8E2094498E00D05C93 /* Known Services */,
-				494175BA20934976002468BE /* LightTimerSetupViewController.swift */,
-				494175C020935333002468BE /* TimerViewController.swift */,
+				49BA3E8620943F5F00D05C93 /* 1st Version */,
+				49B18497209479DF00BCA8AF /* 2nd Version */,
+				49BA3E8F2094537400D05C93 /* New Version */,
 				49BA3E8B2094495C00D05C93 /* Extensions */,
 				4900FEB820918C04006EF625 /* Main.storyboard */,
 				494175BC20934AEA002468BE /* TimerSetup.storyboard */,
@@ -103,19 +121,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		49BA3E8620943F5F00D05C93 /* Old View Controllers */ = {
+		49B18495209479B700BCA8AF /* Time Selection */ = {
+			isa = PBXGroup;
+			children = (
+				49BA3E942094547600D05C93 /* EggTimeView.swift */,
+				49BA3E92209453F900D05C93 /* EggTimeView.xib */,
+			);
+			path = "Time Selection";
+			sourceTree = "<group>";
+		};
+		49B18496209479C400BCA8AF /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				49BA3E9A209455A100D05C93 /* TimerButtonView.swift */,
+				49BA3E9C209455B400D05C93 /* TimerButtonView.xib */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		49B18497209479DF00BCA8AF /* 2nd Version */ = {
+			isa = PBXGroup;
+			children = (
+				49BA3E892094491D00D05C93 /* SimpleListViewController.swift */,
+				49BA3E8E2094498E00D05C93 /* Known Services */,
+				494175BA20934976002468BE /* LightTimerSetupViewController.swift */,
+				494175C020935333002468BE /* TimerViewController.swift */,
+			);
+			path = "2nd Version";
+			sourceTree = "<group>";
+		};
+		49BA3E8620943F5F00D05C93 /* 1st Version */ = {
 			isa = PBXGroup;
 			children = (
 				4900FEB620918C04006EF625 /* ViewController.swift */,
 				494175B6209339CA002468BE /* ServicesViewController.swift */,
 			);
-			path = "Old View Controllers";
+			path = "1st Version";
 			sourceTree = "<group>";
 		};
 		49BA3E8B2094495C00D05C93 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				49BA3E8C2094497600D05C93 /* HomeKit+Extensions.swift */,
+				49BA3E9E209456C700D05C93 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -127,6 +175,28 @@
 				49BA3E8720943F8300D05C93 /* KnownServicesPresenter.swift */,
 			);
 			path = "Known Services";
+			sourceTree = "<group>";
+		};
+		49BA3E8F2094537400D05C93 /* New Version */ = {
+			isa = PBXGroup;
+			children = (
+				49BA3E902094538C00D05C93 /* HomeTimer.storyboard */,
+				49BA3EA62094798B00D05C93 /* Service Selection */,
+				49B18495209479B700BCA8AF /* Time Selection */,
+				49B18496209479C400BCA8AF /* Buttons */,
+			);
+			path = "New Version";
+			sourceTree = "<group>";
+		};
+		49BA3EA62094798B00D05C93 /* Service Selection */ = {
+			isa = PBXGroup;
+			children = (
+				49BA3EA22094685A00D05C93 /* HomeServiceCollectionViewCell.swift */,
+				49BA3EA32094685B00D05C93 /* HomeServiceCollectionViewCell.xib */,
+				49BA3E962094550D00D05C93 /* HomeServiceSelectorView.swift */,
+				49BA3E982094553100D05C93 /* HomeServiceSelectorView.xib */,
+			);
+			path = "Service Selection";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,9 +264,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				494175BF209352D7002468BE /* Timer.storyboard in Resources */,
+				49BA3EA52094685B00D05C93 /* HomeServiceCollectionViewCell.xib in Resources */,
+				49BA3E912094538C00D05C93 /* HomeTimer.storyboard in Resources */,
+				49BA3E992094553100D05C93 /* HomeServiceSelectorView.xib in Resources */,
 				494175BD20934AEA002468BE /* TimerSetup.storyboard in Resources */,
 				4900FEBF20918C04006EF625 /* LaunchScreen.storyboard in Resources */,
 				4900FEBC20918C04006EF625 /* Assets.xcassets in Resources */,
+				49BA3E9D209455B400D05C93 /* TimerButtonView.xib in Resources */,
+				49BA3E93209453F900D05C93 /* EggTimeView.xib in Resources */,
 				4900FEBA20918C04006EF625 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,15 +283,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49BA3E972094550D00D05C93 /* HomeServiceSelectorView.swift in Sources */,
 				494175B9209343BB002468BE /* KnownServicesViewController.swift in Sources */,
 				494175B7209339CA002468BE /* ServicesViewController.swift in Sources */,
+				49BA3EA42094685B00D05C93 /* HomeServiceCollectionViewCell.swift in Sources */,
 				4900FEB720918C04006EF625 /* ViewController.swift in Sources */,
 				4900FEB520918C04006EF625 /* AppDelegate.swift in Sources */,
+				49BA3E9F209456C700D05C93 /* UIView+Extensions.swift in Sources */,
 				494175C120935333002468BE /* TimerViewController.swift in Sources */,
 				494175BB20934976002468BE /* LightTimerSetupViewController.swift in Sources */,
 				49BA3E8A2094491D00D05C93 /* SimpleListViewController.swift in Sources */,
+				49BA3E9B209455A100D05C93 /* TimerButtonView.swift in Sources */,
 				49BA3E8820943F8300D05C93 /* KnownServicesPresenter.swift in Sources */,
 				49BA3E8D2094497600D05C93 /* HomeKit+Extensions.swift in Sources */,
+				49BA3E952094547600D05C93 /* EggTimeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,9 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let presenter = KnownServicesPresenter()
-
+         let presenter = KnownServicesPresenter()
         self.window?.rootViewController = presenter.navigationController
+
+        //self.window?.rootViewController = UIStoryboard(name: "HomeTimer", bundle: nil).instantiateInitialViewController()
         self.window?.makeKeyAndVisible()
         
         return true
