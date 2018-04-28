@@ -1,0 +1,400 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49B184A520947B0600BCA8AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B184A420947B0600BCA8AF /* AppDelegate.swift */; };
+		49B184AC20947B0600BCA8AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B184AB20947B0600BCA8AF /* Assets.xcassets */; };
+		49B184AF20947B0600BCA8AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B184AD20947B0600BCA8AF /* LaunchScreen.storyboard */; };
+		49B184CB20947B9800BCA8AF /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B184CA20947B9800BCA8AF /* HomeKit.framework */; };
+		49B184CC20947BD900BCA8AF /* HomeTimer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B184BB20947B6C00BCA8AF /* HomeTimer.storyboard */; };
+		49B184CD20947BDF00BCA8AF /* HomeServiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B184BC20947B6C00BCA8AF /* HomeServiceCollectionViewCell.swift */; };
+		49B184CE20947BDF00BCA8AF /* HomeServiceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B184BD20947B6C00BCA8AF /* HomeServiceCollectionViewCell.xib */; };
+		49B184CF20947BDF00BCA8AF /* HomeServiceSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B184BE20947B6C00BCA8AF /* HomeServiceSelectorView.swift */; };
+		49B184D020947BDF00BCA8AF /* HomeServiceSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B184BF20947B6C00BCA8AF /* HomeServiceSelectorView.xib */; };
+		49B184D120947BE200BCA8AF /* EggTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B184C120947B6C00BCA8AF /* EggTimeView.swift */; };
+		49B184D220947BE200BCA8AF /* EggTimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B184C220947B6C00BCA8AF /* EggTimeView.xib */; };
+		49B184D320947BE700BCA8AF /* TimerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B184C420947B6C00BCA8AF /* TimerButtonView.swift */; };
+		49B184D420947BE700BCA8AF /* TimerButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B184C520947B6C00BCA8AF /* TimerButtonView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		49B184A120947B0600BCA8AF /* HomeTimer v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeTimer v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49B184A420947B0600BCA8AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49B184AB20947B0600BCA8AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49B184AE20947B0600BCA8AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49B184B020947B0600BCA8AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49B184BB20947B6C00BCA8AF /* HomeTimer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTimer.storyboard; sourceTree = "<group>"; };
+		49B184BC20947B6C00BCA8AF /* HomeServiceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceCollectionViewCell.swift; sourceTree = "<group>"; };
+		49B184BD20947B6C00BCA8AF /* HomeServiceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeServiceCollectionViewCell.xib; sourceTree = "<group>"; };
+		49B184BE20947B6C00BCA8AF /* HomeServiceSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceSelectorView.swift; sourceTree = "<group>"; };
+		49B184BF20947B6C00BCA8AF /* HomeServiceSelectorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeServiceSelectorView.xib; sourceTree = "<group>"; };
+		49B184C120947B6C00BCA8AF /* EggTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggTimeView.swift; sourceTree = "<group>"; };
+		49B184C220947B6C00BCA8AF /* EggTimeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EggTimeView.xib; sourceTree = "<group>"; };
+		49B184C420947B6C00BCA8AF /* TimerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerButtonView.swift; sourceTree = "<group>"; };
+		49B184C520947B6C00BCA8AF /* TimerButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerButtonView.xib; sourceTree = "<group>"; };
+		49B184C820947B9800BCA8AF /* HomeTimer v2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HomeTimer v2.entitlements"; sourceTree = "<group>"; };
+		49B184CA20947B9800BCA8AF /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49B1849E20947B0600BCA8AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B184CB20947B9800BCA8AF /* HomeKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49B1849820947B0600BCA8AF = {
+			isa = PBXGroup;
+			children = (
+				49B184A320947B0600BCA8AF /* HomeTimer v2 */,
+				49B184A220947B0600BCA8AF /* Products */,
+				49B184C920947B9800BCA8AF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		49B184A220947B0600BCA8AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49B184A120947B0600BCA8AF /* HomeTimer v2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49B184A320947B0600BCA8AF /* HomeTimer v2 */ = {
+			isa = PBXGroup;
+			children = (
+				49B184C820947B9800BCA8AF /* HomeTimer v2.entitlements */,
+				49B184A420947B0600BCA8AF /* AppDelegate.swift */,
+				49B184C720947B6C00BCA8AF /* New Version */,
+				49B184AB20947B0600BCA8AF /* Assets.xcassets */,
+				49B184AD20947B0600BCA8AF /* LaunchScreen.storyboard */,
+				49B184B020947B0600BCA8AF /* Info.plist */,
+			);
+			path = "HomeTimer v2";
+			sourceTree = "<group>";
+		};
+		49B184C020947B6C00BCA8AF /* Service Selection */ = {
+			isa = PBXGroup;
+			children = (
+				49B184BC20947B6C00BCA8AF /* HomeServiceCollectionViewCell.swift */,
+				49B184BD20947B6C00BCA8AF /* HomeServiceCollectionViewCell.xib */,
+				49B184BE20947B6C00BCA8AF /* HomeServiceSelectorView.swift */,
+				49B184BF20947B6C00BCA8AF /* HomeServiceSelectorView.xib */,
+			);
+			path = "Service Selection";
+			sourceTree = "<group>";
+		};
+		49B184C320947B6C00BCA8AF /* Time Selection */ = {
+			isa = PBXGroup;
+			children = (
+				49B184C120947B6C00BCA8AF /* EggTimeView.swift */,
+				49B184C220947B6C00BCA8AF /* EggTimeView.xib */,
+			);
+			path = "Time Selection";
+			sourceTree = "<group>";
+		};
+		49B184C620947B6C00BCA8AF /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				49B184C420947B6C00BCA8AF /* TimerButtonView.swift */,
+				49B184C520947B6C00BCA8AF /* TimerButtonView.xib */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		49B184C720947B6C00BCA8AF /* New Version */ = {
+			isa = PBXGroup;
+			children = (
+				49B184BB20947B6C00BCA8AF /* HomeTimer.storyboard */,
+				49B184C020947B6C00BCA8AF /* Service Selection */,
+				49B184C320947B6C00BCA8AF /* Time Selection */,
+				49B184C620947B6C00BCA8AF /* Buttons */,
+			);
+			path = "New Version";
+			sourceTree = "<group>";
+		};
+		49B184C920947B9800BCA8AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49B184CA20947B9800BCA8AF /* HomeKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49B184A020947B0600BCA8AF /* HomeTimer v2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49B184B320947B0600BCA8AF /* Build configuration list for PBXNativeTarget "HomeTimer v2" */;
+			buildPhases = (
+				49B1849D20947B0600BCA8AF /* Sources */,
+				49B1849E20947B0600BCA8AF /* Frameworks */,
+				49B1849F20947B0600BCA8AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HomeTimer v2";
+			productName = "HomeTimer v2";
+			productReference = 49B184A120947B0600BCA8AF /* HomeTimer v2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49B1849920947B0600BCA8AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Dylan Elliott";
+				TargetAttributes = {
+					49B184A020947B0600BCA8AF = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 49B1849C20947B0600BCA8AF /* Build configuration list for PBXProject "HomeTimer v2" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49B1849820947B0600BCA8AF;
+			productRefGroup = 49B184A220947B0600BCA8AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49B184A020947B0600BCA8AF /* HomeTimer v2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49B1849F20947B0600BCA8AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B184AF20947B0600BCA8AF /* LaunchScreen.storyboard in Resources */,
+				49B184D220947BE200BCA8AF /* EggTimeView.xib in Resources */,
+				49B184CE20947BDF00BCA8AF /* HomeServiceCollectionViewCell.xib in Resources */,
+				49B184CC20947BD900BCA8AF /* HomeTimer.storyboard in Resources */,
+				49B184D020947BDF00BCA8AF /* HomeServiceSelectorView.xib in Resources */,
+				49B184D420947BE700BCA8AF /* TimerButtonView.xib in Resources */,
+				49B184AC20947B0600BCA8AF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49B1849D20947B0600BCA8AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B184A520947B0600BCA8AF /* AppDelegate.swift in Sources */,
+				49B184D120947BE200BCA8AF /* EggTimeView.swift in Sources */,
+				49B184D320947BE700BCA8AF /* TimerButtonView.swift in Sources */,
+				49B184CD20947BDF00BCA8AF /* HomeServiceCollectionViewCell.swift in Sources */,
+				49B184CF20947BDF00BCA8AF /* HomeServiceSelectorView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		49B184AD20947B0600BCA8AF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49B184AE20947B0600BCA8AF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49B184B120947B0600BCA8AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		49B184B220947B0600BCA8AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49B184B420947B0600BCA8AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "HomeTimer v2/HomeTimer v2.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P5B99RCV62;
+				INFOPLIST_FILE = "HomeTimer v2/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dylanelliott.HomeTimer-v2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49B184B520947B0600BCA8AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "HomeTimer v2/HomeTimer v2.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P5B99RCV62;
+				INFOPLIST_FILE = "HomeTimer v2/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dylanelliott.HomeTimer-v2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49B1849C20947B0600BCA8AF /* Build configuration list for PBXProject "HomeTimer v2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49B184B120947B0600BCA8AF /* Debug */,
+				49B184B220947B0600BCA8AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49B184B320947B0600BCA8AF /* Build configuration list for PBXNativeTarget "HomeTimer v2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49B184B420947B0600BCA8AF /* Debug */,
+				49B184B520947B0600BCA8AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49B1849920947B0600BCA8AF /* Project object */;
+}
