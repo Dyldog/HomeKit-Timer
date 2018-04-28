@@ -30,9 +30,9 @@ class HomeServiceCollectionViewCell: UICollectionViewCell {
             label.textColor = .black
             bgView.layer.borderColor = UIColor.darkGray.cgColor
         case .off:
-            bgView.backgroundColor = .white
-            label.textColor = .gray
-            bgView.layer.borderColor = UIColor.gray.cgColor
+            bgView.backgroundColor = .black
+            label.textColor = .white
+            bgView.layer.borderColor = UIColor.clear.cgColor
         }
     }
 

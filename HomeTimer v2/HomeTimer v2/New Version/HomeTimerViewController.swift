@@ -9,10 +9,15 @@
 import UIKit
 import HomeKit
 
-class HomeTimerViewController: UIViewController, HMHomeManagerDelegate {
+class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerButtonViewDelegate {
+    
     @IBOutlet var timeView: EggTimeView!
     @IBOutlet var serviceView: HomeServiceSelectorView!
-    @IBOutlet var buttonView: TimerButtonView!
+    @IBOutlet var buttonView: TimerButtonView! {
+        didSet {
+            buttonView.delegate = self
+        }
+    }
     
     var manager: HMHomeManager?
     
@@ -53,5 +58,25 @@ class HomeTimerViewController: UIViewController, HMHomeManagerDelegate {
         }
         
         serviceView.reloadData()
+    }
+    
+    // MARK: - TimerButtonViewDelegate
+    
+    func startButtonTapped() {
+        // START TIMER
+    }
+    
+    func pauseButtonTapped() {
+        // PAUSE TIMER
+    }
+    
+    func resetButtonTapped() {
+        // CONFIRMATION ALERT
+        // RESET TIMER
+    }
+    
+    func stopButtonTapped() {
+        // CONFIRMATION ALERT
+        // STOP TIMER
     }
 }

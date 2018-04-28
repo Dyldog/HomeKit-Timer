@@ -72,6 +72,9 @@ class HomeServiceSelectorView: XibView, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        // TODO: Move this to the view controller, view should just alert
+        
         let cellItem = cellItems[indexPath.row]
         
         let newStatus: ServiceSelection = {

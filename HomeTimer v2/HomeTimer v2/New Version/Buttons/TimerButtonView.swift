@@ -8,8 +8,37 @@
 
 import UIKit
 
+enum TimerState {
+    case stopped
+    case running
+}
+
+protocol TimerButtonViewDelegate {
+    func startButtonTapped()
+    func pauseButtonTapped()
+    func resetButtonTapped()
+    func stopButtonTapped()
+}
+
 @IBDesignable class TimerButtonView: XibView {
     
+    @IBOutlet var stoppedButtonView: UIView!
+    @IBOutlet var runningButtonView: UIView!
+    
+    var delegate: TimerButtonViewDelegate?
+    
+    func set(state: TimerState) {
+        stoppedButtonView.isHidden = state != .stopped
+        runningButtonView.isHidden = state != .running
+    }
+    
+    @IBAction func startButtonTapped() { delegate?.startButtonTapped() }
+    
+    @IBAction func pauseButtonTapped() { delegate?.pauseButtonTapped() }
+    
+    @IBAction func resetButtonTapped() { delegate?.resetButtonTapped() }
+    
+    @IBAction func stopButtonTapped() { delegate?.stopButtonTapped() }
 }
 
 @IBDesignable
