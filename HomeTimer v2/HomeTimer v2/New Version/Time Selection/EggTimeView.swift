@@ -43,7 +43,11 @@ class EggTimeView: XibView, UIScrollViewDelegate {
         }
     }
     
+    // TODO: Make minimum value 1
+    
     var maxValue: Int = 10
+    
+    // TODO: Make numPips variable
     var numPips = 1
     
     private func initializeScrollView() {
