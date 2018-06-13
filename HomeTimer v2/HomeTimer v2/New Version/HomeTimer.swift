@@ -39,21 +39,20 @@ class HomeTimer {
     }
     
     func stop() {
-        guard let timer = timer else { fatalError("Tried to pause timer when none was running")}
-        
-        timer.invalidate()
-        self.timer = nil
+        if let timer = timer {
+            timer.invalidate()
+            self.timer = nil
+        }
     }
     
     @objc private func tick() {
-        guard timeRemaining > 0 else {
-            fatalError("Tried to tick timer when duration is \(timeRemaining)")
+        if timeRemaining > 0 {
+            timeRemaining -= 1
         }
         
-        timeRemaining -= 1
         delegate?.timerDidTick(self)
         
-        if timeRemaining == 0 {
+        if timeRemaining <= 0 {
             complete()
         }
     }

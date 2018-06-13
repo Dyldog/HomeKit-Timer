@@ -13,6 +13,10 @@ class EggTimeView: XibView, UIScrollViewDelegate {
         didSet { initializeScrollView() }
     }
     
+    @IBInspectable var numberYOffset: CGFloat = 0 {
+        didSet { initializeScrollView() }
+    }
+    
     @IBInspectable var numberSpacing: CGFloat = 20 {
         didSet { initializeScrollView() }
     }
@@ -43,15 +47,49 @@ class EggTimeView: XibView, UIScrollViewDelegate {
         }
     }
     
-    // TODO: Make minimum value 1
+    @IBOutlet private var markerSpacingConstraint: NSLayoutConstraint! {
+        didSet {
+            guard let markerSpacingConstraint = markerSpacingConstraint else { return }
+            markerSpacingConstraint.constant = markerSpacing
+        }
+    }
     
-    var maxValue: Int = 10
+    @IBInspectable var markerSpacing: CGFloat = 2 {
+        didSet {
+            guard let markerSpacingConstraint = markerSpacingConstraint else { return }
+            markerSpacingConstraint.constant = markerSpacing
+        }
+    }
+    
+    @IBOutlet private var markerHeightConstraint: NSLayoutConstraint! {
+        didSet {
+            guard let markerHeightConstraint = markerHeightConstraint else { return }
+            markerHeightConstraint.constant = markerHeight
+        }
+    }
+    
+    @IBInspectable var markerHeight: CGFloat = 8 {
+        didSet {
+            guard let markerHeightConstraint = markerHeightConstraint else { return }
+            markerHeightConstraint.constant = markerHeight
+        }
+    }
+    
+    @IBInspectable var maxValue: Int = 10 {
+        didSet {
+            initializeScrollView()
+        }
+    }
     
     // TODO: Make numPips variable
     var numPips = 1
     
     private func initializeScrollView() {
         guard let scrollView = scrollView else { return }
+        
+        scrollView.frame.size.width = frame.size.width
+        scrollView.frame.size.height = frame.size.height - markerSpacing - markerHeight
+        scrollView.contentInsetAdjustmentBehavior = .never
         
         scrollView.subviews.forEach { $0.removeFromSuperview() }
         
@@ -62,11 +100,11 @@ class EggTimeView: XibView, UIScrollViewDelegate {
             let numberLabel = UILabel()
             numberLabel.text = String(index)
             numberLabel.textAlignment = .center
-            numberLabel.font = UIFont.systemFont(ofSize: CGFloat(numberFontSize))
+            numberLabel.font = UIFont.systemFont(ofSize: CGFloat(numberFontSize), weight: .thin)
             numberLabel.textColor = numberColor
             
             numberLabel.sizeToFit()
-            numberLabel.frame.origin.y = scrollView.frame.height - numberLabel.frame.height
+            numberLabel.frame.origin.y = scrollView.frame.height - numberLabel.frame.height - numberYOffset
             
             // numberLabel.backgroundColor = .blue
             
@@ -87,8 +125,9 @@ class EggTimeView: XibView, UIScrollViewDelegate {
             
             previousNumberLabel = numberLabel
             
-            scrollView.contentInset = UIEdgeInsets(top: 0, left: xOffset, bottom: 0, right: xOffset)
             scrollView.contentSize.width = (scrollView.subviews.map { $0.center.x }.max() ?? 0)
+            scrollView.contentInset = UIEdgeInsets(top: 0, left: xOffset, bottom: 0, right: xOffset)
+            scrollView.contentOffset.x = -xOffset
         }
     }
     

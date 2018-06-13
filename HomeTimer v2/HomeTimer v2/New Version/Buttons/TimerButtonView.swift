@@ -32,9 +32,24 @@ protocol TimerButtonViewDelegate {
     var delegate: TimerButtonViewDelegate?
     
     func set(state: TimerState) {
-        pauseResumeButton.setTitle(state == .running ? "Pause" : "Resume", for: .normal)
+        
+        let updateButtonLabel = {
+            self.pauseResumeButton.setTitle(state == .running ? "Pause" : "Resume", for: .normal)
+        }
+        
+        if state != .stopped {
+            if runningButtonView.isHidden {
+                UIView.performWithoutAnimation {
+                    updateButtonLabel()
+                }
+            } else {
+                updateButtonLabel()
+            }
+        }
+        
         stoppedButtonView.isHidden = state != .stopped
         runningButtonView.isHidden = state == .stopped
+        
     }
     
     // MARK: - IBActions

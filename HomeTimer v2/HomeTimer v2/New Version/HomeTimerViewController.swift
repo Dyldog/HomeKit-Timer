@@ -44,6 +44,11 @@ class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerBut
         manager?.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        timeView.layoutSubviews()
+    }
+    
     func set(viewState: TimerState) {
         timeView.set(interactionEnabled: viewState == .stopped)
         serviceView.set(selectionEnabled: viewState == .stopped)
@@ -102,7 +107,11 @@ class HomeTimerViewController: UIViewController, HMHomeManagerDelegate, TimerBut
     // MARK: HMHomeManagerDelegate
     
     func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
-        let home = manager.homes[0]
+        let homes = manager.homes
+        
+        guard homes.count > 0 else { return } // TODO: Error UI
+        
+        let home = homes[0] // TODO: Home selection UI
         
         let allServices = home.accessories.flatMap({ $0.services })
         
