@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nJV-U1-Mut">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nJV-U1-Mut">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,72 +18,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mWe-NL-4HM">
-                                <rect key="frame" x="0.0" y="173" width="375" height="321"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zO-Ur-lPG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="530"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDn-AR-jGg" customClass="HomeServiceSelectorView" customModule="HomeTimer_v2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="218" width="375" height="103"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mWe-NL-4HM">
+                                        <rect key="frame" x="0.0" y="113.5" width="375" height="303"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDn-AR-jGg" customClass="HomeServiceSelectorView" customModule="HomeTimer_v2" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="200" width="375" height="103"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="103" id="7cM-gw-ds8"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="HomeServiceSelectorView"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNO-9H-J4d" customClass="EggTimeView" customModule="HomeTimer_v2" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="160" id="6rq-rg-Kcf"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="EggTimeView"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="numberSpacing">
+                                                        <real key="value" value="91"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="numberFontSize">
+                                                        <integer key="value" value="64"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                        <real key="value" value="13"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="numberColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="numberWidth">
+                                                        <real key="value" value="24"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="numberYOffset">
+                                                        <real key="value" value="-7"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                        <integer key="value" value="60"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="markerSpacing">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="markerHeight">
+                                                        <real key="value" value="13"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="103" id="7cM-gw-ds8"/>
+                                            <constraint firstAttribute="trailing" secondItem="gDn-AR-jGg" secondAttribute="trailing" id="0xy-es-01G"/>
+                                            <constraint firstItem="BNO-9H-J4d" firstAttribute="leading" secondItem="mWe-NL-4HM" secondAttribute="leading" id="5A5-o0-Hlb"/>
+                                            <constraint firstItem="gDn-AR-jGg" firstAttribute="leading" secondItem="mWe-NL-4HM" secondAttribute="leading" id="7hC-ca-V90"/>
+                                            <constraint firstItem="BNO-9H-J4d" firstAttribute="top" secondItem="mWe-NL-4HM" secondAttribute="top" id="NUN-aW-eDj"/>
+                                            <constraint firstAttribute="trailing" secondItem="BNO-9H-J4d" secondAttribute="trailing" id="cDg-5e-6Ss"/>
+                                            <constraint firstAttribute="bottom" secondItem="gDn-AR-jGg" secondAttribute="bottom" id="doT-5P-nDv"/>
+                                            <constraint firstItem="gDn-AR-jGg" firstAttribute="top" secondItem="BNO-9H-J4d" secondAttribute="bottom" constant="40" id="glg-4S-wXu"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="HomeServiceSelectorView"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNO-9H-J4d" customClass="EggTimeView" customModule="HomeTimer_v2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="160" id="6rq-rg-Kcf"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="EggTimeView"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="numberSpacing">
-                                                <real key="value" value="91"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="numberFontSize">
-                                                <integer key="value" value="64"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
-                                                <real key="value" value="13"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="numberColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="numberWidth">
-                                                <real key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="numberYOffset">
-                                                <real key="value" value="-7"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                                <integer key="value" value="60"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="markerSpacing">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="markerHeight">
-                                                <real key="value" value="13"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="gDn-AR-jGg" secondAttribute="trailing" id="0xy-es-01G"/>
-                                    <constraint firstItem="BNO-9H-J4d" firstAttribute="leading" secondItem="mWe-NL-4HM" secondAttribute="leading" id="5A5-o0-Hlb"/>
-                                    <constraint firstItem="gDn-AR-jGg" firstAttribute="leading" secondItem="mWe-NL-4HM" secondAttribute="leading" id="7hC-ca-V90"/>
-                                    <constraint firstItem="BNO-9H-J4d" firstAttribute="top" secondItem="mWe-NL-4HM" secondAttribute="top" id="NUN-aW-eDj"/>
-                                    <constraint firstAttribute="trailing" secondItem="BNO-9H-J4d" secondAttribute="trailing" id="cDg-5e-6Ss"/>
-                                    <constraint firstAttribute="bottom" secondItem="gDn-AR-jGg" secondAttribute="bottom" id="doT-5P-nDv"/>
-                                    <constraint firstItem="gDn-AR-jGg" firstAttribute="top" secondItem="BNO-9H-J4d" secondAttribute="bottom" constant="58" id="glg-4S-wXu"/>
+                                    <constraint firstItem="mWe-NL-4HM" firstAttribute="leading" secondItem="0zO-Ur-lPG" secondAttribute="leading" id="D9S-QA-SeP"/>
+                                    <constraint firstItem="mWe-NL-4HM" firstAttribute="centerY" secondItem="0zO-Ur-lPG" secondAttribute="centerY" id="YnX-Ju-Lvk"/>
+                                    <constraint firstAttribute="trailing" secondItem="mWe-NL-4HM" secondAttribute="trailing" id="afI-bU-em9"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahC-sL-VMY" customClass="TimerButtonView" customModule="HomeTimer_v2" customModuleProvider="target">
@@ -99,12 +110,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mWe-NL-4HM" firstAttribute="centerY" secondItem="e2V-bZ-ccV" secondAttribute="centerY" id="3dE-dy-iSy"/>
                             <constraint firstItem="E5W-3f-mmq" firstAttribute="trailing" secondItem="ahC-sL-VMY" secondAttribute="trailing" constant="19" id="AAD-kC-zOH"/>
-                            <constraint firstItem="mWe-NL-4HM" firstAttribute="trailing" secondItem="E5W-3f-mmq" secondAttribute="trailing" id="Ari-0A-Tfd"/>
-                            <constraint firstItem="mWe-NL-4HM" firstAttribute="leading" secondItem="E5W-3f-mmq" secondAttribute="leading" id="kpX-jc-aKo"/>
+                            <constraint firstItem="ahC-sL-VMY" firstAttribute="top" secondItem="0zO-Ur-lPG" secondAttribute="bottom" constant="20" id="IyH-W5-w1D"/>
+                            <constraint firstItem="0zO-Ur-lPG" firstAttribute="top" secondItem="E5W-3f-mmq" secondAttribute="top" id="g6k-d9-FK7"/>
+                            <constraint firstItem="0zO-Ur-lPG" firstAttribute="trailing" secondItem="E5W-3f-mmq" secondAttribute="trailing" id="hEK-jN-SQp"/>
                             <constraint firstItem="ahC-sL-VMY" firstAttribute="leading" secondItem="E5W-3f-mmq" secondAttribute="leading" constant="18" id="sLM-Gq-6N6"/>
                             <constraint firstItem="E5W-3f-mmq" firstAttribute="bottom" secondItem="ahC-sL-VMY" secondAttribute="bottom" constant="20" id="wrl-kX-edY"/>
+                            <constraint firstItem="0zO-Ur-lPG" firstAttribute="leading" secondItem="E5W-3f-mmq" secondAttribute="leading" id="yZG-Kz-AMn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="E5W-3f-mmq"/>
                     </view>
