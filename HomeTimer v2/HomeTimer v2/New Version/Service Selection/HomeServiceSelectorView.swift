@@ -48,6 +48,7 @@ protocol HomeServiceSelectorViewDelegate {
     func homeServiceSelectorView(_ serviceSelectorView: HomeServiceSelectorView, didSelectServiceAt index: Int)
 }
 
+@IBDesignable
 class HomeServiceSelectorView: XibView, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var delegate: HomeServiceSelectorViewDelegate?
@@ -110,6 +111,21 @@ class HomeServiceSelectorView: XibView, UICollectionViewDataSource, UICollection
     
     func set(selectionEnabled: Bool) {
         collectionView?.allowsSelection = selectionEnabled
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        
+        cellItems = [
+            .init(roomName: "Room", serviceName: "Service"),
+            .init(roomName: "Room", serviceName: "Service 2"),
+            .init(roomName: "Room", serviceName: "Service 3"),
+            .init(roomName: "Room", serviceName: "Service 4")
+        ]
+        
+        collectionView?.reloadData()
+        
+        
     }
     
 }
